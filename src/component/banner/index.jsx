@@ -9,7 +9,7 @@ const Banner = () => {
   return (
     <section className="mt-20">
       <div className="container">
-        <div className="flex items-center gap-x-9 h-[400px]">
+        <div className="flex items-center gap-x-9 h-[400px] bg-red-500">
           <div className="w-full h-full">
             <Carousel className="rounded-xl">
               {carouselData.map((el, i) => (
