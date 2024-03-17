@@ -4,8 +4,6 @@ import { carouselData } from '../../constant';
 import BannerCard from '../banner-card';
 
 const Banner = () => {
-  
-
   return (
     <section className="mt-20">
       <div className="container">

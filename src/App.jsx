@@ -1,6 +1,6 @@
 import {  RouterProvider, createBrowserRouter } from 'react-router-dom';
 import 'react-loading-skeleton/dist/skeleton.css'
-import { Home, Info, Products } from './pages';
+import { Home, Info, Order, Products } from './pages';
 import './App.css';
 
 function App() {
@@ -20,6 +20,10 @@ function App() {
     {
       path: "/info/:id",
       element: <Info/>
+    },
+    {
+      path: "/orders",
+      element: <Order/>
     }
   ])
   return (

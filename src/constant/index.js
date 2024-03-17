@@ -1,3 +1,5 @@
+import { z } from 'zod'
+
 import image_1 from "../assets/image/img-1.png"
 import image_2 from "../assets/image/img-2.png"
 import image_3 from "../assets/image/img-3.png"
@@ -97,3 +99,10 @@ export const carouselData = [
       image: image_1,
     },
   ];
+
+  export const FormData = z.object({
+    firstName: z.string().min(1).max(18),
+    lastName: z.string().min(1).max(18),
+    phone: z.string().min(10).max(14).optional(),
+    email: z.string().email(),
+  });

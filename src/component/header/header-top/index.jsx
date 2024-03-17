@@ -39,7 +39,7 @@ const HeaderTop = () => {
             Акции
           </a>
           <a
-            href="#!"
+            href='#!'
             className="text-xl text-title-color font-bold">
             Доставка и оплата
           </a>

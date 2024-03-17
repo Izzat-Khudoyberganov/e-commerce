@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { Icons } from '../../../assets/icons';
 import { MainContext } from '../../../context/useMainContext';
 
-const Cart = ({ data }) => {
+const Cart = ({ data, counter }) => {
   const { image, id, title, price, quantity } = data;
   const {  addOne, removeOne, removeFromCart } = useContext(MainContext);
   return (
@@ -27,7 +27,9 @@ const Cart = ({ data }) => {
           </a>
         </p>
 
-        <div className="flex gap-3 items-center mt-2">
+       {
+        counter ? (
+          <div className="flex gap-3 items-center mt-2">
           <button
             className="text-2xl text-black px-3 py-2 disabled:text-blue-gray-500"
             disabled={quantity == 1}
@@ -43,6 +45,10 @@ const Cart = ({ data }) => {
             +
           </button>
         </div>
+        ) : (
+          ""
+        )
+       }
 
         <button onClick={() => removeFromCart(id)} className="flex items-center gap-1 absolute top-2 right-2">
           <Icons.trashIcon />

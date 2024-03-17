@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext } from 'react';
 import {
   Button,
   Dialog,
@@ -9,6 +9,7 @@ import {
 import { Icons } from '../../../assets/icons';
 import { MainContext } from '../../../context/useMainContext';
 import Cart from './cart';
+import { Link } from 'react-router-dom';
 
 function CartModal({ open, handleOpen }) {
   const { cartItems } = useContext(MainContext);
@@ -17,8 +18,6 @@ function CartModal({ open, handleOpen }) {
   for (const key of cartItems) {
     totalSum = totalSum + key.price * key.quantity;
   }
-
-  console.log(totalSum);
 
   return (
     <>
@@ -38,6 +37,7 @@ function CartModal({ open, handleOpen }) {
                 <Cart
                   key={el.id}
                   data={el}
+                  counter={true}
                 />
               ))
             : 'Cartbox is empty'}
@@ -51,11 +51,11 @@ function CartModal({ open, handleOpen }) {
                   {`${totalSum.toLocaleString()} ₽  `}
                 </span>
               </h3>
-              <Button
-                type="button"
+              <Link
+                to='/orders'
                 className="bg-primary text-white text-base font-medium leading-6 py-2 px-16 rounded-none mt-2">
                 Оформить заказ
-              </Button>
+              </Link>
             </div>
 
             <Button
